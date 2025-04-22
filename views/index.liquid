@@ -1,0 +1,64 @@
+{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M"><img src="/assets/restTextLogo.svg" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
+
+<main class="homepage">
+    
+<!-- De box met de AI die je vragen kan stellen -->
+    <section class="chat-Tab">
+        <search class="search-Item-Box">
+            <h2>I'm looking for a gift for...</h2>
+            <form action="" class="search-Bar">
+                <img src="/assets/micIcon.png" alt="" class="mic-Icon">
+                <input type="search" name="search" aria-label="Search Gifts" class="search-Text">
+                <button type="submit" aria-label="Submit search" class="search-Button">
+                    <img src="/assets/searchIcon.png" alt="" class="magnifying-Glass">
+                </button>
+            </form>
+        </search>
+        <footer class="show-Active-Users">
+            <img src="/assets/user1.png" alt="" class="user1" >
+            <img src="/assets/user2.png" alt="" class="user2">
+            <img src="/assets/user3.png" alt="" class="user3">
+            <img src="/assets/usersExtra.png" alt="Over +1 Million  Users" class="user-Extra">
+            <p>Unisciti alla nostra community di spotters</p>
+        </footer>
+    </section>
+    <!-- Core functionaliteit van de site, laat alle resultaten zien de je van de AI zou krijgen (Voor nu statisch) -->
+    <section class="results-Tab">
+        <a href="/profile">
+            <article class="create-List-Card">
+                <p>Create a list for your best friend</p>
+                <img src="/assets/bloemetje.png" alt="" class="flower">
+                <img src="/assets/girl1.png" alt="" class="woman">
+                <p>Register or Log in</p>
+            </article>
+        </a>
+        {% for gift in allMilledoniProducts %}
+            <a href="/gift/{{ gift.id }}">
+                <article class="gift-Box">
+                    <img src="{{ gift.image }}" alt="" class="cover-Image">
+                    <h3>{{ gift.name | truncate: 40}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
+                    <p class="card-Spotter-Text">Spotter: {{ gift.spotter }}</p>
+                    <footer class="bottom-Row">
+                        <img src="/assets/girl1.png" alt="" class="user-Icon1">
+                        <img src="/assets/user1.png" alt="" class="user-Icon2">
+                        <p>+<span>{{ gifts.saved | default: 35}}</span>Saved </p> <!-- Default zet de standaard van de variablen op een vaste waarde van iets als er niks is -->
+                        <img src="/assets/gifticon.png" alt="" class="gift-Icon">
+                        <p>+<span>{{ gift.given | default: 11 }}</span>Given</p>
+                    </footer>
+                    <!-- Check of de gift.id bestaat in de savedProducts array -->
+                    {% assign savedProductIds = savedProducts | map: 'milledoni_products_id' %} <!-- Voegt array toe aan de map milledoni_productis_id !-->
+                    {% if savedProductIds contains gift.id %} <!-- Als een array (dus savedProductIds) een bepaald ID Contained voer dan dit uit: !-->
+                        <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
+                            <button type="SUBMIT" name="giftId" class="add-remove-List-Button" aria-label="Remove from list" value="{{ gift.id }}"><span>-</span></button>
+                        </form>
+                    {% else %}
+                        <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
+                            <button type="SUBMIT" class="add-remove-List-Button" aria-label="Add to your List"><span>+</span></button>
+                        </form>
+                    {% endif %}
+                </article>
+            </a>
+        {% endfor %}
+    </section>
+
+</main>

@@ -1,0 +1,21 @@
+{% render 'partials/head.liquid', title: 'My Liked Gifts', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.png" alt="" class="M"><img src="/assets/restTextLogo.png" alt="" class="illedoni"></a>', slogan: 'Your saved gift ideas' %}
+
+<main>
+    <section class="liked-gifts">
+        <h2>Your Saved Gifts</h2>
+            {% for gift in savedGifts | compact %} <!-- Compact zorgt ervoor dat het mogelijk is om een null waarde te hebben -->
+                <article class="gift-Box">
+                    <a href="/gift/{{ gift.productDetails.id }}">
+                        <img src="{{ gift.productDetails.image }}" alt="">
+                        <h3>{{ gift.productDetails.name }}</h3>
+                        <p>{{ gift.productDetails.spotter }}</p>
+                        <img src="/assets/girl1.png" alt=""><img src="/assets/user1.png" alt=""><p>+{{ gift.productDetails.saved }}<p>Saved</p>
+                        <img src="/assets/gifticon.png" alt=""><p>+{{ gift.productDetails.given }}Given</p>
+                    </a>
+                </article>
+            {% else %}
+                <h2>No saved gifts yet</h2>
+                <p>Go to our homepage and search yourself some gifts. If you like them, add them!</p>
+            {% endfor %}
+    </section>
+</main>

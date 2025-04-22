@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        font-size: var(--big-text);
+        display: flex;
+        justify-content: center;
+    }
+    a:hover{
+        color: blue;
+    }
+}

@@ -1,0 +1,46 @@
+{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.png" alt="" class="M"><img src="/assets/restTextLogo.png" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
+ 
+<main class="giftpage">
+    <div class="product-Image">
+        <nav>
+            <a href="/" class="back-Button">
+                <div class="back-Arrow">↵</div>
+                <p>Back</p>
+            </a>
+        </nav>
+        <img src="{{ specificGift.image }}" alt="">
+    </div>
+    <section class="product-Description">
+        <h2>{{ specificGift.name  }}</h2>
+        <dl class="show-Users">
+            <img src="/assets/girl1.png" alt=""><img src="/assets/user1.png" alt="">
+            <p>+<span>{{ gifts.saved | default: 35}}</span>Saved </p>
+            <img src="/assets/gifticon.png" alt="">
+            <p>+<span>{{ gift.given | default: 11 }}</span>Given</p>
+        </dl>
+        <section class="product-Description-Right-Section">
+            <dl class="part1">
+                <h2>Description</h2>
+                <p>{{ specificGift.description }}</p>
+            </dl>
+            <dl class="part2">
+                <img src="/assets/boxquestion.png" alt="">
+                <p>WHY THIS GIFT The glue is non-toxic, so it's safe to eat or drink off repaired items. To retain the gold colour it is not advised to place items in the dishwasher.</p>
+            </dl>
+            <dl class="part2-Bottom-Box">
+                <img src="/assets/chefskiss.png" alt="">
+                <p>GOOD TO KNOW One kit can repair approximately eight normal plates as per the images, with 3 full cracks.</p>
+            </dl>
+            </div>
+        </section>
+        <h2>Where To Buy</h2>
+        <a href="{{ specificGift.shop_url }}">
+            <img src="" alt="">
+            <img src="/assets/shopicon.png" alt="Buy item at {{ specificGift.shop_name }}">
+            <p>{{ specificGift.amount}}</p>
+            <p>{{ specificGift.shop_name }}</p>
+        </a>
+    </section>
+</main>
+
+

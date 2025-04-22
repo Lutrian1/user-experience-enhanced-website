@@ -1,0 +1,267 @@
+html, body {
+    margin: 1vw;
+    padding: 0;
+    font-family: var(--main-font);
+    background-color: var(--main-background-color);
+    
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: var(--main-text-color);
+    }
+}
+
+        /* boven | rechts | onder | links */
+        /* margin: 0 0 0 0; */
+
+body {
+    /*----------------------------------- ALLE VARIABELEN --------------------------------------*/
+
+    /* Lettertypen */
+    --main-font: 'Parkinsans', sans-serif;
+
+    /* Lettergroottes voor koppen */
+    --h1: 60px;
+    --h2: 40px;
+    --h3: 24px;
+    --h4: 30px;
+
+    --main-p: 16.6px;
+    --big-text: 20px;
+    --big-important-text: 24px;
+
+    /* Font weight */
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 800;
+
+    /* Kleuren */
+    --primary-color: #FEFCFA;
+    --main-text-color: #000000;
+    --alt-text-color: #FFFFFF;
+    --main-background-color: #F6F5F5;
+    --results-tab-background-color: #EDEDED;
+    --create-list-card: #868686;
+
+    /* Knoppen */
+    --button-background-color: #FFFFFF;
+    --second-button-background-color: #212121;
+
+    /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
+
+    h1 {
+        font-size: var(--h1);
+        font-weight: var(--bold);
+    }
+
+    h1.slogan {
+        font-size: var(--h3);
+        margin: 0;
+    }
+
+    h2 {
+        font-size: var(--h2);
+    }
+
+    h3 {
+        font-size: var(--h3);
+        margin: 0 0 5px 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: var(--main-p);
+        margin: 0;
+    }
+
+    p.card-Spotter-Text{
+        margin: 0 0 2px 0;
+    }
+}
+
+/*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
+header {
+    .Logo{
+        display: flex;
+        align-items: center;
+        .M{
+            margin-right: 15px;
+            height: 76px;
+            @media (min-width: 0px) {
+                margin-top: -10px;
+            }
+            @media (min-width: 1340px) {
+                margin-top: -25px;
+            }
+        }
+        .illedoni{
+            margin-top: 6px;
+            @media (min-width: 0px) {
+                display: none;
+            }
+            @media (min-width: 1340px) {
+                display: block;
+            }
+        }
+    }
+    nav {
+        display: flex;
+        position: fixed; 
+        z-index: 1000; 
+    }
+    @media (min-width: 0px) {
+        nav{
+            top: 15px;
+            right: 10px; 
+        }
+        .Rest {
+            display: none;
+        }
+        .list-Button {
+            position: sticky;
+            width: 40px;
+            height: 40px;
+            #text {
+                display: none;
+            }
+            .save-Icon{
+                 margin: 0;
+            }
+        }
+    }
+    @media (min-width: 1340px) {
+        nav{
+            top: 25px;
+            right: 25px;
+        }
+        .Rest {
+            display: inline-block;
+        }
+        .list-Button {
+            width: 170px;
+            height: 40px;
+            #text {
+                display: inline-block;
+            }
+            .save-Icon{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+/*----------------------------------- BUTTON --------------------------------------*/
+
+/* Algemene buttonstijl */
+.add-remove-List-Button {
+    font-family: var(--main-font);
+    font-weight: var(--semi-bold);
+    margin: 5px;
+    background-color: var(--button-background-color);
+    box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.list-Button, .profile-Button {
+    font-family: var(--main-font);
+    font-weight: var(--semi-bold);
+    margin: 5px;
+    background-color: var(--button-background-color);
+    box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 50px;
+}
+
+/* Andere buttonstijlen */
+
+.list-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E8E8E8;
+    border-radius: 50px;
+    padding: 5px;
+    img {
+        margin-left: 10px;
+        width: 15px;
+        height: 20px;
+    }
+}
+
+.profile-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #E8E8E8;
+    height: 50px;
+    width: 50px;
+    img {
+        width: 25px;
+        height: 30px;
+    }
+}
+
+.search-Bar{
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    border: solid #000000;
+    height: 60px;
+    border-radius: 50px;
+    /* boven | rechts | onder | links */
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    
+    .search-Text{
+        border: none;
+        width: calc(100% - 100px); /* Ruimte voor knoppen */
+    }
+    .mic-Icon{
+        width: 18px;
+        height: 22px;
+    }
+    
+    .search-Button{
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+        border: none;
+        background-color: #000000;
+        .magnifying-Glass{
+            margin: 5px;
+            left: 5px;
+        }
+    }
+}
+
+/* -------------------------------- ANIMATIE ----------------------------------- */
+.add-remove-List-Button:hover{
+    scale: 1.1;
+    transition: ease-in-out;
+}
+
+.load-State {
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0);
+    width: 25px;
+    height: 25px;
+    border: 5px solid rgba(0, 0, 0, 0.325);
+    border-top: 5px solid rgb(0, 0, 0);
+    opacity: 0.6;
+    animation: rotate 2s infinite;
+    span{
+        display: none;
+    }
+}
+
+@keyframes rotate {
+    100% {
+      rotate: 360deg;
+    }
+}
+
