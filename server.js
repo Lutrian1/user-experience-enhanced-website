@@ -1,6 +1,8 @@
 import express from 'express'
 import { Liquid } from 'liquidjs';
 
+const userID = 6 // MAAK DEZE OOIT DYNAMISCH
+
 const app = express()
 app.use(express.urlencoded({extended: true})) // Formulierdata parsen
 app.use(express.static('public'))
@@ -9,10 +11,6 @@ const engine = new Liquid();
 app.engine('liquid', engine.express());
 
 app.set('views', './views')
-
-// ROUTES
-
-
 
 // ----------------------------------------------- HOMEPAGE  -----------------------------------------------//
 
