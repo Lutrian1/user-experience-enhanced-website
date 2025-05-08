@@ -1,4 +1,4 @@
-{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M"><img src="/assets/restTextLogo.svg" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
+{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M" loading="lazy"><img src="/assets/restTextLogo.svg" alt="" class="illedoni" loading="lazy"></a>' , slogan: 'Finding and sharing gift ideas' %}
 
 <main class="homepage">
 
@@ -7,18 +7,18 @@
         <search class="search-Item-Box">
             <h2>I'm looking for a gift for...</h2>
             <form action="" class="search-Bar">
-                <img src="/assets/micIcon.png" alt="" class="mic-Icon">
+                <img src="/assets/micIcon.png" alt="" class="mic-Icon" loading="lazy">
                 <input type="search" name="search" aria-label="Search Gifts" class="search-Text">
                 <button type="submit" aria-label="Submit search" class="search-Button">
-                    <img src="/assets/searchIcon.png" alt="" class="magnifying-Glass">
+                    <img src="/assets/searchIcon.png" alt="" class="magnifying-Glass" loading="lazy">
                 </button>
             </form>
         </search>
         <footer class="show-Active-Users">
-            <img src="/assets/user1.png" alt="" class="user1" >
-            <img src="/assets/user2.png" alt="" class="user2">
-            <img src="/assets/user3.png" alt="" class="user3">
-            <img src="/assets/usersExtra.png" alt="Over +1 Million  Users" class="user-Extra">
+            <img src="/assets/user1.png" alt="" class="user1" loading="lazy">
+            <img src="/assets/user2.png" alt="" class="user2" loading="lazy">
+            <img src="/assets/user3.png" alt="" class="user3" loading="lazy">
+            <img src="/assets/usersExtra.png" alt="Over +1 Million  Users" class="user-Extra" loading="lazy">
             <p>Unisciti alla nostra community di spotters</p>
         </footer>
     </section>
@@ -27,22 +27,22 @@
         <a href="/profile">
             <article class="create-List-Card">
                 <p>Create a list for your best friend</p>
-                <img src="/assets/bloemetje.png" alt="" class="flower">
-                <img src="/assets/girl1.png" alt="" class="woman">
+                <img src="/assets/bloemetje.png" alt="" class="flower" loading="lazy">
+                <img src="/assets/girl1.png" alt="" class="woman" loading="lazy">
                 <p>Register or Log in</p>
             </article>
         </a>
         {% for gift in allMilledoniProducts %}
             <a href="/gift/{{ gift.id }}" style="view-transition-name: card-{{ gift.id }};"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
                 <article class="gift-Box">
-                    <img src="{{ gift.image }}" alt="" class="cover-Image">
+                    <img src="{{ gift.image }}" alt="" class="cover-Image" loading="lazy">
                     <h3>{{ gift.name | truncate: 40}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
                     <p class="card-Spotter-Text">Spotter: {{ gift.spotter }}</p>
                     <footer class="bottom-Row">
-                        <img src="/assets/girl1.png" alt="" class="user-Icon1">
-                        <img src="/assets/user1.png" alt="" class="user-Icon2">
+                        <img src="/assets/girl1.png" alt="" class="user-Icon1" loading="lazy">
+                        <img src="/assets/user1.png" alt="" class="user-Icon2" loading="lazy">
                         <p>+<span>{{ gifts.saved | default: 35}}</span>Saved </p> <!-- Default zet de standaard van de variablen op een vaste waarde van iets als er niks is -->
-                        <img src="/assets/gifticon.png" alt="" class="gift-Icon">
+                        <img src="/assets/gifticon.png" alt="" class="gift-Icon" loading="lazy">
                         <p>+<span>{{ gift.given | default: 11 }}</span>Given</p>
                     </footer>
                     <!-- Check of de gift.id bestaat in de savedProducts array -->

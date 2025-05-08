@@ -1,4 +1,4 @@
-{% render 'partials/head.liquid', title: 'My Liked Gifts', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.png" alt="" class="M"><img src="/assets/restTextLogo.png" alt="" class="illedoni"></a>', slogan: 'Your saved gift ideas' %}
+{% render 'partials/head.liquid', title: 'My Liked Gifts', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.png" alt="" class="M" loading="lazy"><img src="/assets/restTextLogo.png" alt="" class="illedoni" loading="lazy"></a>', slogan: 'Your saved gift ideas' %}
 
 <main>
     <section class="liked-gifts">
@@ -9,8 +9,8 @@
                         <img src="{{ gift.productDetails.image }}" alt="">
                         <h3>{{ gift.productDetails.name }}</h3>
                         <p>{{ gift.productDetails.spotter }}</p>
-                        <img src="/assets/girl1.png" alt=""><img src="/assets/user1.png" alt=""><p>+{{ gift.productDetails.saved }}<p>Saved</p>
-                        <img src="/assets/gifticon.png" alt=""><p>+{{ gift.productDetails.given }}Given</p>
+                        <img src="/assets/girl1.png" alt="" loading="lazy"><img src="/assets/user1.png" alt="" loading="lazy"><p>+{{ gift.productDetails.saved }}<p>Saved</p>
+                        <img src="/assets/gifticon.png" alt="" loading="lazy"><p>+{{ gift.productDetails.given }}Given</p>
                     </a>
                 </article>
             {% else %}

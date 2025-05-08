@@ -1,4 +1,4 @@
-{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M"><img src="/assets/restTextLogo.svg" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
+{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M" loading="lazy"><img src="/assets/restTextLogo.svg" alt="" class="illedoni" loading="lazy"></a>' , slogan: 'Finding and sharing gift ideas' %}
  
 <main class="giftpage">
     <div class="product-Image" style="view-transition-name: main-image;"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
@@ -8,14 +8,14 @@
                 <p>Back</p>
             </a>
         </nav>
-        <img src="{{ specificGift.image }}" alt="">
+        <img src="{{ specificGift.image }}" alt="" loading="lazy">
     </div>
     <section class="product-Description" style="view-transition-name: description;"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
         <h2>{{ specificGift.name  }}</h2>
         <dl class="show-Users">
-            <img src="/assets/girl1.png" alt=""><img src="/assets/user1.png" alt="">
+            <img src="/assets/girl1.png" alt="" loading="lazy"><img src="/assets/user1.png" alt="" loading="lazy">
             <p>+<span>{{ gifts.saved | default: 35}}</span>Saved </p>
-            <img src="/assets/gifticon.png" alt="">
+            <img src="/assets/gifticon.png" alt="" loading="lazy">
             <p>+<span>{{ gift.given | default: 11 }}</span>Given</p>
         </dl>
         <section class="product-Description-Right-Section">
@@ -24,19 +24,19 @@
                 <p>{{ specificGift.description }}</p>
             </dl>
             <dl class="part2">
-                <img src="/assets/boxquestion.png" alt="">
+                <img src="/assets/boxquestion.png" alt="" loading="lazy">
                 <p>WHY THIS GIFT The glue is non-toxic, so it's safe to eat or drink off repaired items. To retain the gold colour it is not advised to place items in the dishwasher.</p>
             </dl>
             <dl class="part2-Bottom-Box">
-                <img src="/assets/chefskiss.png" alt="">
+                <img src="/assets/chefskiss.png" alt="" loading="lazy">
                 <p>GOOD TO KNOW One kit can repair approximately eight normal plates as per the images, with 3 full cracks.</p>
             </dl>
             </div>
         </section>
         <h2>Where To Buy</h2>
         <a href="{{ specificGift.shop_url }}">
-            <img src="" alt="">
-            <img src="/assets/shopicon.png" alt="Buy item at {{ specificGift.shop_name }}">
+            <img src="" alt="" loading="lazy">
+            <img src="/assets/shopicon.png" alt="Buy item at {{ specificGift.shop_name }}" loading="lazy">
             <p>{{ specificGift.amount}}</p>
             <p>{{ specificGift.shop_name }}</p>
         </a>
