@@ -1,16 +1,16 @@
-{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.png" alt="" class="M"><img src="/assets/restTextLogo.png" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
+{% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M"><img src="/assets/restTextLogo.svg" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
  
 <main class="giftpage">
-    <div class="product-Image">
+    <div class="product-Image" style="view-transition-name: main-image;"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
         <nav>
-            <a href="/" class="back-Button">
+            <a href="/" class="back-Button" style="view-transition-name: back-button;"> <!-- Eigen naam zodat de button al statisch is ingeladen-->
                 <div class="back-Arrow">↵</div>
                 <p>Back</p>
             </a>
         </nav>
         <img src="{{ specificGift.image }}" alt="">
     </div>
-    <section class="product-Description">
+    <section class="product-Description" style="view-transition-name: description;"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
         <h2>{{ specificGift.name  }}</h2>
         <dl class="show-Users">
             <img src="/assets/girl1.png" alt=""><img src="/assets/user1.png" alt="">
@@ -42,5 +42,6 @@
         </a>
     </section>
 </main>
+
 
 

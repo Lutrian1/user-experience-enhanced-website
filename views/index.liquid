@@ -1,7 +1,7 @@
 {% render 'partials/head.liquid', title: 'Homepage', logo: '<a href="/" class="Logo" aria-label="Milledoni"><img src="/assets/mainLogo.svg" alt="" class="M"><img src="/assets/restTextLogo.svg" alt="" class="illedoni"></a>' , slogan: 'Finding and sharing gift ideas' %}
 
 <main class="homepage">
-    
+
 <!-- De box met de AI die je vragen kan stellen -->
     <section class="chat-Tab">
         <search class="search-Item-Box">
@@ -33,7 +33,7 @@
             </article>
         </a>
         {% for gift in allMilledoniProducts %}
-            <a href="/gift/{{ gift.id }}">
+            <a href="/gift/{{ gift.id }}" style="view-transition-name: card-{{ gift.id }};"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
                 <article class="gift-Box">
                     <img src="{{ gift.image }}" alt="" class="cover-Image">
                     <h3>{{ gift.name | truncate: 40}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
